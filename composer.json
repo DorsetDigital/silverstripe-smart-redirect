@@ -3,7 +3,13 @@
   "description": "Allows CMS users to build redirection URLs based on browser language, user location and time periods",
   "type": "silverstripe-vendormodule",
   "homepage": "https://github.com/DorsetDigital/silverstripe-smart-redirect",
-  "keywords": ["silverstripe", "redirect", ",url", "QR code", "redirection"],
+  "keywords": [
+    "silverstripe",
+    "redirect",
+    ",url",
+    "QR code",
+    "redirection"
+  ],
   "authors": [
     {
       "name": "Tim Burt",
@@ -12,7 +18,11 @@
   ],
   "require": {
     "silverstripe/vendor-plugin": "^1.0",
-    "silverstripe/cms": "^4.0"
+    "silverstripe/cms": "^4.0",
+    "endroid/qr-code": "^3.9",
+    "geoip2/geoip2": "^2.11",
+    "zonuexe/http-accept-language": "^0.4.1",
+    "league/iso3166": "^3.0"
   },
   "license": "BSD-3-Clause",
   "autoload": {
