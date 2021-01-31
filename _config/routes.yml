@@ -1,0 +1,9 @@
+---
+Name: smartredirectroutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'qr//$Action': 'DorsetDigital\SmartRedirect\Control\QRController'
