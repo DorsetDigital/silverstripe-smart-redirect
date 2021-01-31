@@ -23,7 +23,8 @@
     "geoip2/geoip2": "^2.11",
     "zonuexe/http-accept-language": "^0.4.1",
     "league/iso3166": "^3.0",
-    "undefinedoffset/sortablegridfield": "^2@stable"
+    "undefinedoffset/sortablegridfield": "^2@stable",
+    "guzzlehttp/guzzle": "^7.0"
   },
   "license": "BSD-3-Clause",
   "autoload": {
