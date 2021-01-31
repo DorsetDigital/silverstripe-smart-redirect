@@ -1,4 +1,4 @@
-#silverstripe-smart-redirect
+# silverstripe-smart-redirect
 
 This module provides an interface to create and manage URL redirects based on a number of criteria.
 
@@ -6,11 +6,11 @@ Initially designed to work as an easy method for generating and deploying QR cod
 
 Tools are included for redirection based on the browser language, and the user's geolocation (IP based using Maxmind).   A default redirection rule is also included.  Time-based redirects will be available in a future release.
 
-#Requirements & Dependencies
+# Requirements & Dependencies
 * Silverstripe 4.x
 
 
-#Installation
+# Installation
 
 Install with composer:
 
