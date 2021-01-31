@@ -26,6 +26,8 @@ This is an alpha-stage module.  Full usage and configuration instructions to fol
 A set of supported languages and countries is included with the module.  If you wish to use the geolocation functionality, you will need a Maxmind licence key for the free Geolite 2 countries database.  The module expects this to be set in the environment in: `MAXMIND_LICENCE_KEY`
 Once configured, a build task is included to download and extract the more recent Maxmind database.  It is expected that this would be run via cron or using the QueuedJobs module periodically to keep the database current.
 
+Screenshots of the QR preview, redirect editing and rule editing screens can be found in the [docs](/docs) directory. 
+
 # ToDo
 
 * Add internationalisation to all fields / content
