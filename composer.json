@@ -22,7 +22,8 @@
     "endroid/qr-code": "^3.9",
     "geoip2/geoip2": "^2.11",
     "zonuexe/http-accept-language": "^0.4.1",
-    "league/iso3166": "^3.0"
+    "league/iso3166": "^3.0",
+    "undefinedoffset/sortablegridfield": "^2@stable"
   },
   "license": "BSD-3-Clause",
   "autoload": {

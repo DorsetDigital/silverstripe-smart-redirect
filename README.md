@@ -9,6 +9,8 @@ Tools are included for redirection based on the browser language, and the user's
 # Requirements & Dependencies
 * Silverstripe 4.x
 
+(See composer.json for additional dependencies)
+
 
 # Installation
 
@@ -17,6 +19,6 @@ Install with composer:
 `composer require dorsetdigital/silverstripe-smart-redirect`
 
 
-#Usage
+# Usage
 
 This is an alpha-stage module.  Full usage and configuration instructions to follow.  Please do not use this in a production environment!   Beta testers welcomed, please get in touch.
