@@ -2,8 +2,6 @@
 
 namespace DorsetDigital\SmartRedirect\Helper;
 
-
-use App\Helper\FilesHelper;
 use GuzzleHttp\Client;
 use SilverStripe\Core\Config\Configurable;
 use SilverStripe\Core\Environment;
