@@ -42,8 +42,18 @@ class TimedRuled extends RedirectBase
         $configJSON = $this->getConfig();
         $config = json_decode($configJSON, true);
 
-        $fields[] = DatetimeField::create('FromTime', 'Start date/time');
-        $fields[] = DatetimeField::create('ToTime', 'End date/time');
+        $fromField = DatetimeField::create('FromTime', 'Start date/time');
+        $toField = DatetimeField::create('ToTime', 'End date/time');
+
+        if (isset($config['from'])) {
+            $fromField->setValue($config['from']);
+        }
+        if (isset($config['to'])) {
+            $toField->setValue($config['to']);
+        }
+
+        $fields[] = $fromField;
+        $fields[] = $toField;
 
         return $fields;
     }
