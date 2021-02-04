@@ -9,9 +9,9 @@ use SilverStripe\ORM\DataObject;
 
 class RedirectRule extends DataObject
 {
-    private static $table_name = 'QRRedirectRule';
+    private static $table_name = 'SmartRedirectRule';
     private static $db = [
-        'RuleType' => 'Enum("Default,Location,Language")',
+        'RuleType' => 'Enum("Default,Location,Language,Timed")',
         'RuleConfig' => 'Text',
         'RedirectTo' => 'Varchar(255)',
         'SortOrder' => 'Int'

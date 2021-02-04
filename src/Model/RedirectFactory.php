@@ -5,6 +5,7 @@ namespace DorsetDigital\SmartRedirect\Model;
 use DorsetDigital\SmartRedirect\Model\Rule\DefaultRule;
 use DorsetDigital\SmartRedirect\Model\Rule\LanguageRule;
 use DorsetDigital\SmartRedirect\Model\Rule\LocationRule;
+use DorsetDigital\SmartRedirect\Model\Rule\TimedRuled;
 
 class RedirectFactory
 {
@@ -27,6 +28,8 @@ class RedirectFactory
                 return new LocationRule($rule);
             case 'language':
                 return new LanguageRule($rule);
+            case 'timed':
+                return new TimedRuled($rule);
             default:
                 return false;
         }
