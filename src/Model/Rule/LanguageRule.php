@@ -3,14 +3,14 @@
 namespace DorsetDigital\SmartRedirect\Model\Rule;
 
 use DorsetDigital\SmartRedirect\Helper\BrowserLanguageHelper;
-use DorsetDigital\SmartRedirect\Model\QRBase;
+use DorsetDigital\SmartRedirect\Model\RedirectBase;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\ListboxField;
 use SilverStripe\ORM\FieldType\DBField;
 use Teto\HTTP\AcceptLanguage;
 
-class LanguageRule extends QRBase
+class LanguageRule extends RedirectBase
 {
     public function checkRule()
     {

@@ -6,15 +6,15 @@ use DorsetDigital\SmartRedirect\Model\Rule\DefaultRule;
 use DorsetDigital\SmartRedirect\Model\Rule\LanguageRule;
 use DorsetDigital\SmartRedirect\Model\Rule\LocationRule;
 
-class QRFactory
+class RedirectFactory
 {
 
     /**
-     * @param QRRedirectRule|null $rule
+     * @param RedirectRule|null $rule
      * @param null $ruleType
      * @return DefaultRule|false
      */
-    public function getRule(QRRedirectRule $rule = null, $ruleType = null)
+    public function getRule(RedirectRule $rule = null, $ruleType = null)
     {
         if ($ruleType == '') {
             $ruleType = $rule->RuleType;

@@ -3,13 +3,13 @@
 namespace DorsetDigital\SmartRedirect\Model\Rule;
 
 use DorsetDigital\SmartRedirect\Helper\MaxMindHelper;
-use DorsetDigital\SmartRedirect\Model\QRBase;
+use DorsetDigital\SmartRedirect\Model\RedirectBase;
 use League\ISO3166\ISO3166;
 use MaxMind\Db\Reader;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Forms\ListboxField;
 
-class LocationRule extends QRBase
+class LocationRule extends RedirectBase
 {
     public function checkRule()
     {

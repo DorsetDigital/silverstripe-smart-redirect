@@ -2,11 +2,11 @@
 
 namespace DorsetDigital\SmartRedirect\Control;
 
-use DorsetDigital\SmartRedirect\Model\QRFactory;
+use DorsetDigital\SmartRedirect\Model\RedirectFactory;
 use DorsetDigital\SmartRedirect\Model\QRRedirect;
 use SilverStripe\Control\HTTPRequest;
 
-class QRController extends \PageController
+class SmartRedirectController extends \PageController
 {
     private static $url_handlers = [
         '//$Segment!' => 'index'
@@ -14,17 +14,10 @@ class QRController extends \PageController
 
     public function index(HTTPRequest $request)
     {
-        $urlSegment = trim($request->param('Segment'));
-        if ($urlSegment == "") {
-            return $this->httpError(404);
-        }
-        $redirect = QRRedirect::getByURLSegment($urlSegment);
-        if (!$redirect) {
-            return $this->httpError(404);
-        }
+        $redirect = $this->data();
 
         foreach ($redirect->Rules() as $redirectRule) {
-            $factory = new QRFactory();
+            $factory = new RedirectFactory();
             $rule = $factory->getRule($redirectRule);
             if (($rule) && ($rule->checkRule() === true)) {
                 return $this->redirect($rule->getRedirect());

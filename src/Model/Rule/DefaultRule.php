@@ -2,9 +2,9 @@
 
 namespace DorsetDigital\SmartRedirect\Model\Rule;
 
-use DorsetDigital\SmartRedirect\Model\QRBase;
+use DorsetDigital\SmartRedirect\Model\RedirectBase;
 
-class DefaultRule extends QRBase
+class DefaultRule extends RedirectBase
 {
     public function checkRule()
     {

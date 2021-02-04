@@ -2,7 +2,7 @@
 
 namespace DorsetDigital\SmartRedirect\Model;
 
-abstract class QRBase
+abstract class RedirectBase
 {
     private $ruleConfig;
     private $redirectURL;

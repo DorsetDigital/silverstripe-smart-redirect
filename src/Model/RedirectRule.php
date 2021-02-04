@@ -2,11 +2,12 @@
 
 namespace DorsetDigital\SmartRedirect\Model;
 
+use DorsetDigital\SmartRedirect\Page\SmartRedirectPage;
 use SilverStripe\Control\Controller;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\ORM\DataObject;
 
-class QRRedirectRule extends DataObject
+class RedirectRule extends DataObject
 {
     private static $table_name = 'QRRedirectRule';
     private static $db = [
@@ -16,7 +17,7 @@ class QRRedirectRule extends DataObject
         'SortOrder' => 'Int'
     ];
     private static $has_one = [
-        'Redirect' => QRRedirect::class
+        'Redirect' => SmartRedirectPage::class
     ];
     private static $default_sort = 'SortOrder';
     private static $summary_fields = [
@@ -34,7 +35,7 @@ class QRRedirectRule extends DataObject
         $savedRule = $this->isInDB();
 
         foreach ($fieldTypes as $fieldType) {
-            $fact = new QRFactory();
+            $fact = new RedirectFactory();
             if (($savedRule) && ($this->RuleType == $fieldType)) {
                 $rule = $fact->getRule($this);
                 $formFields = $rule->getFormFields();
@@ -63,7 +64,7 @@ class QRRedirectRule extends DataObject
     public function getRuleConfigDescription()
     {
         if ($this->isInDB()) {
-            $fact = new QRFactory();
+            $fact = new RedirectFactory();
             $rule = $fact->getRule($this);
             return $rule->getSummaryDescription();
         }
@@ -74,7 +75,7 @@ class QRRedirectRule extends DataObject
     public function onBeforeWrite()
     {
         parent::onBeforeWrite();
-        $fact = new QRFactory();
+        $fact = new RedirectFactory();
         $rule = $fact->getRule(null, $this->RuleType);
         $request = Controller::curr()->getRequest();
         $this->RuleConfig = $rule->buildConfigData($this, $request);
