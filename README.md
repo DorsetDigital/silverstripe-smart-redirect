@@ -31,8 +31,6 @@ Screenshots of the QR preview, redirect editing and rule editing screens can be 
 # ToDo
 
 * Add internationalisation to all fields / content
-* Complete time-based redirection rule
-* Suppress rule confguration data in CMS
 * Add ability to enable / disable specific rule types using the configuration API
 * Add download option for generated QR at large size / high res
 * Finish docs

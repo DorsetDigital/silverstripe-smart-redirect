@@ -39,8 +39,15 @@ class RedirectRule extends DataObject
             if (($savedRule) && ($this->RuleType == $fieldType)) {
                 $rule = $fact->getRule($this);
                 $formFields = $rule->getFormFields();
-                if ((is_array($formFields)) && (count($formFields) > 0)) {
+                if (is_array($formFields)) {
                     array_unshift($formFields, LiteralField::create($fieldType . '-fields-open', '<div id="' . $fieldType . '-fields">'));
+
+                    if ($this->config()->get('show_config_field') === true) {
+                        $fields->dataFieldByName('RuleConfig')->setRows(2)->setReadOnly(true);
+                    } else {
+                        $fields->removeByName('RuleConfig');
+                    }
+
                     $formFields[] = LiteralField::create($fieldType . '-fields-close', '</div>');
                     $fields->addFieldsToTab('Root.Main', $formFields);
                 }
@@ -50,12 +57,9 @@ class RedirectRule extends DataObject
                     LiteralField::create('intro', '<p><strong>Select the rule type and save the record to start configuring.</strong></p>')
                 ]);
             }
-
-
         }
 
         $fields->removeByName(['SortOrder', 'RedirectID']);
-        $fields->dataFieldByName('RuleConfig')->setRows(2)->setReadOnly(true);
         $fields->dataFieldByName('RedirectTo')->setDescription('The full URL of the redirect, eg. https://www.example.com');
 
         return $fields;
