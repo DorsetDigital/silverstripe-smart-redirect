@@ -45,12 +45,12 @@ class TimedRuled extends RedirectBase
         $fromField = DatetimeField::create('FromTime', 'Start date/time')->setHTML5(true);
         $toField = DatetimeField::create('ToTime', 'End date/time')->setHTML5(true);
 
-        if (isset($config['from'])) {
-            $fromValue = (string) $config['from'].":00";
+        if ((isset($config['from'])) && (!is_array($config['from']))) {
+            $fromValue = (string)$config['from'] . ":00";
             $fromField->setValue($fromValue);
         }
-        if (isset($config['to'])) {
-            $toValue = (string) $config['to'].":00";
+        if ((isset($config['to'])) && (!is_array($config['to']))) {
+            $toValue = (string)$config['to'] . ":00";
             $toField->setValue($toValue);
         }
 
